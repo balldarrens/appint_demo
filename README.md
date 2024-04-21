@@ -9,9 +9,12 @@ In order to apply the terrform, it is required to pass the following vars in dur
 The backend prefix used in conjunction with the backend bucket is hardcoded to: appint-demo/terraform/state
 You can change this by setting a variable for that as well.  The variable is:  backend_prefix
 
-for example:
+For consistency, gitignore ignores a file called tfapply.sh.
+
+You can set all this in a shell to execute:
 
 ```bash
+#!/bin/bash
 # set env variables for:
 tf_folder_id="123456789012" #12 digit forlder id
 tf_billing_account="000000-000000-000000" # HEX BILLING ID
@@ -23,4 +26,10 @@ tf_backend_prefix="your_preferred_prefix"
 
 # apply the terraform
 terraform apply -var folder_id="${tf_folder_id}" -var billing_account="${tf_billing_account}" -var owner_email="${tf_owner_email}" -var backend_bucket_name="${tf_backend_bucket_name}"
+```
+
+Then simply use that to apply:
+
+```bash
+sh ./tfapply.sh
 ```
