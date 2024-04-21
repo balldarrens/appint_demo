@@ -1,5 +1,5 @@
 # Backend configuration
-backend_prefix      = "demo-appint3/terraform/state"
+backend_prefix      = "appint-demo/terraform/state"
 
 # Project variables
 apis = [
